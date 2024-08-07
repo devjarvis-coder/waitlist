@@ -3,50 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beautiful Tripetto Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Full Page Tripetto Form</title>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        html, body {
             margin: 0;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 20px;
-            max-width: 600px;
+            padding: 0;
+            height: 100%;
             width: 100%;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background-color: #808080;
         }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-align: center;
+        #tripetto-1l4pefo {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 25%; /* Add 5% padding on left and right */
+            box-sizing: border-box;
+        }
+        #tripetto-1l4pefo > div {
+            width: 100%;
+            height: 100%;
+            max-width: 1200px; /* Set a max-width for larger screens */
+            margin: 0 auto;
+        }
+        .tripetto-collector-rolling {
+            height: 100% !important;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            #tripetto-1l4pefo {
+                padding: 0 3%; /* Reduce padding on smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            #tripetto-1l4pefo {
+                padding: 0 2%; /* Further reduce padding on very small screens */
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Our Form</h1>
-        <div id="tripetto-1l4pefo"></div>
-    </div>
-
+    <div id="tripetto-1l4pefo"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tripetto/runner"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tripetto/runner-autoscroll"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tripetto/studio"></script>
     <script>
-        TripettoStudio.form({
-            runner: TripettoAutoscroll,
-            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiWnFTNHhPakEzUno5NDV1RVJVRW5BckNYWWRTeVFXMmU5THArSmJEai94MD0iLCJkZWZpbml0aW9uIjoicXMzL001MkVYUHJWaFB3YnAwcjFhWllnN00zcnJqOHRodEtmNE9WOEcyMD0iLCJ0eXBlIjoiY29sbGVjdCJ9.unxlDoAUED-Y-0MQNkZi5wQh5FwzI5kQQOM_OT5ntPU",
-            element: "tripetto-1l4pefo"
-        });
+    TripettoStudio.form({
+        runner: TripettoAutoscroll,
+        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiWnFTNHhPakEzUno5NDV1RVJVRW5BckNYWWRTeVFXMmU5THArSmJEai94MD0iLCJkZWZpbml0aW9uIjoicXMzL001MkVYUHJWaFB3YnAwcjFhWllnN00zcnJqOHRodEtmNE9WOEcyMD0iLCJ0eXBlIjoiY29sbGVjdCJ9.unxlDoAUED-Y-0MQNkZi5wQh5FwzI5kQQOM_OT5ntPU",
+        element: "tripetto-1l4pefo",
+        styles: {
+            direction: "vertical",
+            fontFamily: "Arial, sans-serif",
+            backgroundColor: "#808080",
+            verticalPadding: 20,
+            horizontalPadding: 20,
+        },
+        options: {
+            fitToContainer: true
+        }
+    });
     </script>
 </body>
 </html>
