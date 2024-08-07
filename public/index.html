@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ai waitlist</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('background.jpeg'); /* Change to your background image URL */
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+      }
+      .content {
+        position: relative;
+        color: white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Default margin-top for desktop */
+        margin-top: -250px;
+      }
+      .content img.cover-image {
+        max-width: 100%;
+        width: 500px;
+      }
+      #door {
+        max-width: 100%;
+        height: 350px;
+        width: 270px;
+        margin-top: -120px; /* Reduces space between cover and door */
+      }
+      #join-waitlist-btn {
+        padding: 10px 20px;
+        font-size: 20px;
+        color: rgb(249, 249, 249);
+        background-color: #69696900;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        border-color: #696969;
+        font-weight: bold;
+        margin-top: 20px; /* Adds space between door and button */
+      }
+      #join-waitlist-btn:hover {
+        background-color: #5c5c5c;
+      }
+      /* Media query for mobile devices */
+      @media (max-width: 640px) {
+        .content {
+          margin-top: -130px; /* Adjust the margin-top for mobile devices */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="content">
+      <img src="one cover.png" alt="Cover Image" class="cover-image" />
+      <img id="door" src="door.gif" alt="Door GIF" />
+      <form id="waitlist-form">
+        <button type="submit" id="join-waitlist-btn">WAITLIST</button>
+      </form>
+    </div>
+    <script>
+      document
+        .getElementById("waitlist-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          window.location.href = "join-waitlist.html";
+        });
+    </script>
+  </body>
+</html>
